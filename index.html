@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Warm Neutral & Tech Blue -->
-    <!-- Application Structure Plan: Une application à page unique avec une navigation supérieure fixe qui défile vers des sections dédiées : un en-tête percutant, une présentation de la solution, une section de services interactifs sous forme de cartes cliquables, une vitrine de produits, un graphique interactif pour les marchés cibles, et un résumé des avantages clés. Cette structure est conçue comme un entonnoir de vente, guidant logiquement l'utilisateur de la proposition de valeur générale aux détails spécifiques, le tout menant à un appel à l'action clair. C'est plus engageant et intuitif qu'une simple lecture linéaire. -->
-    <!-- Visualization & Content Choices: La liste des "Services Inclus" est transformée en cartes interactives (HTML/JS) pour une exploration engageante. La liste des "Marchés Cibles" est visualisée via un graphique en beignet (Chart.js) pour montrer l'étendue de l'expertise de manière dynamique et mémorable. Les "Pourquoi nous choisir" sont présentés dans une grille d'icônes pour une lecture rapide et un impact visuel. Ces choix transforment les listes statiques en expériences interactives, améliorant la rétention de l'information. -->
+    <!-- Application Structure Plan: Une application à page unique avec une navigation supérieure fixe qui défile vers des sections dédiées : un en-tête percutant, une présentation de la solution, une section de services interactifs sous forme de cartes cliquables, une vitrine de produits, et un résumé des avantages clés. La section "Marchés Cibles" a été supprimée. Cette structure est conçue comme un entonnoir de vente, guidant logiquement l'utilisateur de la proposition de valeur générale aux détails spécifiques, le tout menant à un appel à l'action clair. C'est plus engageant et intuitif qu'une simple lecture linéaire. -->
+    <!-- Visualization & Content Choices: La liste des "Services Inclus" est transformée en cartes interactives (HTML/JS) pour une exploration engageante. Les "Pourquoi nous choisir" sont présentés dans une grille d'icônes pour une lecture rapide et un impact visuel. La section contact intègre désormais les numéros de téléphone et une photo des fondateurs pour une touche plus personnelle. Ces choix transforment les listes statiques en expériences interactives, améliorant la rétention de l'information. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
@@ -71,7 +71,6 @@
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#solution" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Notre Solution</a>
                     <a href="#services" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Services</a>
-                    <a href="#marches" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Marchés Cibles</a>
                     <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">Contactez-nous</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-800">
@@ -82,7 +81,6 @@
         <div id="mobile-menu" class="hidden md:hidden">
             <a href="#solution" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Notre Solution</a>
             <a href="#services" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Services</a>
-            <a href="#marches" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">Marchés Cibles</a>
             <a href="#contact" class="block py-2 px-4 text-sm text-blue-600 hover:bg-gray-100">Contactez-nous</a>
         </div>
     </header>
@@ -178,59 +176,24 @@
                 </div>
             </div>
         </section>
-
-        <section id="marches" class="py-16 lg:py-24">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl lg:text-4xl font-bold">Un Partenaire Adapté à Chaque Secteur</h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Nous comprenons que chaque environnement a des besoins uniques. Notre flexibilité nous permet de servir une grande variété de marchés. Survolez le graphique pour explorer.</p>
-                </div>
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="chart-container">
-                        <canvas id="marchesCiblesChart"></canvas>
-                    </div>
-                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl">1</div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Entreprises et Bureaux</h4>
-                                <p class="text-gray-600">Améliorez le bien-être et la productivité de vos employés avec une offre de pause de qualité.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl">2</div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Écoles et Universités</h4>
-                                <p class="text-gray-600">Offrez des pauses énergisantes et pratiques aux étudiants et au personnel enseignant.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl">3</div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Espaces de Coworking</h4>
-                                <p class="text-gray-600">Créez un environnement dynamique et attractif pour les professionnels nomades.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-xl">4</div>
-                            <div class="ml-4">
-                                <h4 class="text-lg font-semibold">Centres Sportifs & Hôpitaux</h4>
-                                <p class="text-gray-600">Proposez des rafraîchissements et des snacks aux visiteurs, patients et sportifs.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <section id="contact" class="py-16 lg:py-24 bg-blue-600 text-white">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl lg:text-4xl font-bold">Prêt à Transformer Vos Pauses ?</h2>
                     <p class="mt-4 text-lg text-blue-100">Contactez-nous dès aujourd'hui pour une étude personnalisée de vos besoins et un devis gratuit. Notre équipe est à votre écoute pour concevoir la solution parfaite.</p>
+
+                    <!-- Photo des fondateurs -->
+                    <img src="nosphotos.png" alt="Photo des fondateurs de Snapgoentreprise" class="mx-auto mt-8 mb-8 w-full max-w-xs rounded-lg shadow-xl">
+
                     <div class="mt-8 bg-white text-gray-800 rounded-lg p-6 inline-block shadow-lg">
                         <p class="font-semibold">Par e-mail :</p>
                         <a href="mailto:snapgoentreprise@gmail.com" class="text-xl lg:text-2xl font-bold text-blue-600 hover:underline">snapgoentreprise@gmail.com</a>
+                        
+                        <p class="font-semibold mt-4">Par téléphone :</p>
+                        <p class="text-xl lg:text-2xl font-bold text-blue-600">06 30 00 25 44</p>
+                        <p class="text-xl lg:text-2xl font-bold text-blue-600">06 66 08 84 14</p>
+                        
                         <p class="mt-2 text-sm text-gray-500">4 rue du canal, 34450 Vias</p>
                     </div>
                 </div>
@@ -275,67 +238,45 @@
                 });
             });
 
-            const ctx = document.getElementById('marchesCiblesChart').getContext('2d');
-            const marchesCiblesChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Entreprises', 'Écoles & Universités', 'Coworking', 'Centres Sportifs', 'Hôpitaux & Cliniques'],
-                    datasets: [{
-                        label: 'Marchés Cibles',
-                        data: [40, 25, 15, 10, 10],
-                        backgroundColor: [
-                            '#3b82f6',
-                            '#10b981',
-                            '#f97316',
-                            '#8b5cf6',
-                            '#ec4899'
-                        ],
-                        borderColor: '#f8fafc',
-                        borderWidth: 4,
-                        hoverOffset: 16
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '60%',
-                    plugins: {
-                        legend: {
-                            position: 'bottom',
-                            labels: {
-                                color: '#4b5563',
-                                font: {
-                                    size: 14,
-                                    family: 'Inter'
-                                }
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#1f2937',
-                            titleFont: {
-                                size: 16,
-                                family: 'Inter'
-                            },
-                            bodyFont: {
-                                size: 14,
-                                family: 'Inter'
-                            },
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
-                                    if (context.parsed !== null) {
-                                        label += context.parsed + '%';
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
+            // Suppression du graphique car la section marchés cibles a été retirée
+            // const ctx = document.getElementById('marchesCiblesChart').getContext('2d');
+            // const marchesCiblesChart = new Chart(ctx, {
+            //     type: 'doughnut',
+            //     data: {
+            //         labels: ['Entreprises', 'Écoles & Universités', 'Coworking', 'Centres Sportifs', 'Hôpitaux & Cliniques'],
+            //         datasets: [{
+            //             label: 'Marchés Cibles',
+            //             data: [40, 25, 15, 10, 10],
+            //             backgroundColor: [
+            //                 '#3b82f6',
+            //                 '#10b981',
+            //                 '#f97316',
+            //                 '#8b5cf6',
+            //                 '#ec4899'
+            //             ],
+            //             borderColor: '#f8fafc',
+            //             borderWidth: 4,
+            //             hoverOffset: 16
+            //         }]
+            //     },
+            //     options: {
+            //         responsive: true,
+            //         maintainAspectRatio: false,
+            //         cutout: '60%',
+            //         plugins: {
+            //             legend: {
+            //                 position: 'bottom',
+            //                 labels: {
+            //                     color: '#4b5563',
+            //                     font: {
+            //                         size: 14,
+            //                         family: 'Inter'
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // });
         });
     </script>
 </body>
